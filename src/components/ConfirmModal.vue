@@ -1,9 +1,9 @@
 <script setup lang="ts">
 	import { onBeforeUnmount, onMounted } from "vue";
 	import { emptyString } from "@/constants/common";
-	import { ModalResponse, useModal } from "@/composables/useModal";
+	import { ModalResponse, useConfirmModal } from "@/composables/useConfirmModal";
 
-	const { isOpen, respond, dismiss, settings } = useModal();
+	const { isOpen, respond, dismiss, settings } = useConfirmModal();
 
 	function selectOption(value: ModalResponse): void {
 		respond(value);

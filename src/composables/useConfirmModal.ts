@@ -22,7 +22,7 @@ let resolver: ((response: ModalResponse) => void) | undefined;
 const isOpen = ref(false);
 const settings = shallowRef<ModalSettings>();
 
-export function modalDialogue(options: ModalSettings): Promise<ModalResponse> {
+export function confirm(options: ModalSettings): Promise<ModalResponse> {
 	if (resolver) {
 		return Promise.reject(new Error("A modal dialogue is already open."));
 	}
@@ -51,7 +51,7 @@ function dismiss(): void {
 	respond(ModalResponse.Dismiss);
 }
 
-export function useModal() {
+export function useConfirmModal() {
 	return {
 		isOpen: readonly(isOpen),
 		settings: readonly(settings),

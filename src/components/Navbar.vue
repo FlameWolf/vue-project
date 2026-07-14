@@ -4,7 +4,7 @@
 	import { useToggle } from "@/composables/useToggle";
 	import { useDropdown } from "@/composables/useDropdown";
 	import { Theme, useTheme } from "@/composables/useTheme";
-	import { modalDialogue, ModalResponse } from "@/composables/useModal";
+	import { confirm, ModalResponse } from "@/composables/useConfirmModal";
 
 	const navDropdownTrigger = useTemplateRef("nav-dropdown-trigger");
 	const { activeTheme, toggleTheme } = useTheme();
@@ -13,8 +13,8 @@
 	const isDark = computed(() => activeTheme.value === Theme.Dark);
 	const modalResponse = ref<ModalResponse>();
 
-	async function showModal() {
-		modalResponse.value = await modalDialogue({
+	async function showConfirmModal() {
+		modalResponse.value = await confirm({
 			title: "Confirm",
 			message: "Are you sure?",
 			options: [
@@ -48,7 +48,7 @@
 						<a class="nav-link active" aria-current="page" role="button">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" role="button" @click="showModal">Show Modal</a>
+						<a class="nav-link" role="button" @click="showConfirmModal">Show Modal</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a ref="nav-dropdown-trigger" class="nav-link dropdown-toggle" role="button" @click="toggleNavDropdown" :aria-expanded="showNavDropdown">Dropdown</a>
