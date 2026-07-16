@@ -131,24 +131,24 @@
 </script>
 <template>
 	<p>Ask a Yes/No question:</p>
-	<input v-model="question" :disabled="loading" />
+	<input v-model="question" :disabled="loading"/>
 	<p v-html="answer"></p>
-	<hr />
+	<hr/>
 	<h2>Post Watcher</h2>
 	<button class="btn btn-primary" @click="updateTestPost">Click to update the value</button>
 	<span id="test-post-val" class="ms-2">{{ testPost }}</span>
-	<hr />
+	<hr/>
 	<h2>Sync Watcher</h2>
 	<button class="btn btn-primary" @click="updateTestSync">Click to update the value</button>
 	<span id="test-sync-val" class="ms-2">{{ testSync }}</span>
 	<span class="badge text-bg-secondary ms-2">Pre watch was fired {{ preWatchCount }} times</span>
 	<span class="badge text-bg-secondary ms-2">Sync watch was fired {{ syncWatchCount }} times</span>
-	<hr />
+	<hr/>
 	<div v-if="showGitExample" class="git-example">
 		<h2>Latest Vue Core Commits</h2>
 		<template v-for="branch in branches">
 			<label>
-				<input type="radio" :value="branch" name="branch" v-model="currentBranch" />
+				<input type="radio" :value="branch" name="branch" v-model="currentBranch"/>
 				<span class="mx-2">{{ branch }}</span>
 			</label>
 		</template>
@@ -158,7 +158,7 @@
 				<a :href="html_url" target="_blank" class="commit">{{ sha.slice(0, 7) }}</a>
 				<span class="mx-2">-</span>
 				<span class="message">{{ truncate(commit.message) }}</span>
-				<br />
+				<br/>
 				<span class="mx-2">by</span>
 				<span class="author">
 					<a :href="author.html_url" target="_blank">{{ commit.author.name }}</a>
