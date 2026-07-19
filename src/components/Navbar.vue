@@ -1,13 +1,12 @@
 <script setup lang="ts">
 	import "@/styles.css";
-	import { computed, ref, useTemplateRef, watch } from "vue";
+	import { computed, onMounted, ref, useTemplateRef, watch } from "vue";
 	import { useToggle } from "@/composables/useToggle";
 	import { useDropdown } from "@/composables/useDropdown";
-	import { Theme, useTheme } from "@/composables/useTheme";
+	import { activeTheme, applyTheme, Theme, toggleTheme } from "@/composables/useTheme";
 	import { confirm, ModalResponse } from "@/composables/useConfirmModal";
 
 	const navDropdownTrigger = useTemplateRef("nav-dropdown-trigger");
-	const { activeTheme, toggleTheme } = useTheme();
 	const { show: showNavbar, toggle: toggleNavbar } = useToggle();
 	const { show: showNavDropdown, toggle: toggleNavDropdown } = useDropdown(navDropdownTrigger);
 	const isDark = computed(() => activeTheme.value === Theme.Dark);
@@ -33,6 +32,10 @@
 
 	watch(modalResponse, response => {
 		console.log("Modal response:", response);
+	});
+
+	onMounted(() => {
+		applyTheme(activeTheme.value);
 	});
 </script>
 <template>
