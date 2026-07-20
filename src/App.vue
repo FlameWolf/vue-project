@@ -3,6 +3,7 @@
 	import { ref } from "vue";
 	import { emptyString } from "@/constants/common";
 	import Navbar from "@/components/Navbar.vue";
+	import DynamicDemo from "@/components/DynamicDemo.vue";
 	import SlotDemo from "@/components/SlotDemo.vue";
 	import EventDemo from "@/components/EventDemo.vue";
 	import PropsDemo from "@/components/PropsDemo.vue";
@@ -26,6 +27,7 @@
 </script>
 <template>
 	<Navbar/>
+	<DynamicDemo/>
 	<SlotDemo>
 		<p>This content is displayed inside the slot.</p>
 		<hr/>
