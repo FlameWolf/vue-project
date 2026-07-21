@@ -27,6 +27,7 @@
 </script>
 <template>
 	<Navbar/>
+	<RegistrationDemo/>
 	<DynamicDemo/>
 	<SlotDemo>
 		<p>This content is displayed inside the slot.</p>
