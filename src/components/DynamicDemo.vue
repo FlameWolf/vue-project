@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref, useTemplateRef, watch, type ComponentInstance } from "vue";
+	import { ref, shallowRef, watch } from "vue";
 	import EventDemo from "@/components/EventDemo.vue";
 	import PropsDemo from "@/components/PropsDemo.vue";
 	import RefDemo from "@/components/RefDemo.vue";
@@ -8,7 +8,7 @@
 	type ValidComponent = typeof EventDemo | typeof PropsDemo | typeof RefDemo | typeof SlotDemo;
 
 	const ordinal = ref(0);
-	const activeComponent = ref<ValidComponent | null>();
+	const activeComponent = shallowRef<ValidComponent | null>();
 
 	function updateComponent() {
 		ordinal.value = (ordinal.value + 1) % 4;
