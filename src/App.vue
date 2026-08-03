@@ -3,6 +3,7 @@
 	import { ref } from "vue";
 	import { emptyString } from "@/constants/common";
 	import Navbar from "@/components/Navbar.vue";
+	import FallThroughAttrsDemo from "@/components/FallThroughAttrsDemo.vue";
 	import VModelDemo from "@/components/VModelDemo.vue";
 	import DynamicDemo from "@/components/DynamicDemo.vue";
 	import SlotDemo from "@/components/SlotDemo.vue";
@@ -36,6 +37,7 @@
 </script>
 <template>
 	<Navbar/>
+	<FallThroughAttrsDemo class="btn-primary" name="target-button" type="button"/>
 	<VModelDemo v-model.first.capitalise="demoProps"/>
 	<RegistrationDemo/>
 	<DynamicDemo/>
