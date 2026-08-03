@@ -36,7 +36,7 @@
 </script>
 <template>
 	<Navbar/>
-	<VModelDemo v-model="demoProps"/>
+	<VModelDemo v-model.first.capitalise="demoProps"/>
 	<RegistrationDemo/>
 	<DynamicDemo/>
 	<SlotDemo>
