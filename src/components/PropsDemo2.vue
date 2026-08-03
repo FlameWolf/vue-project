@@ -44,11 +44,11 @@
 </script>
 <template>
 	<h2>Props Demo V2</h2>
-	<hr />
+	<hr/>
 	<p>{{ greeting }}, {{ title }} {{ name }}.</p>
 	<p>You are {{ age }} years old.</p>
 	<p>In {{ currentYear + yearsToAdd }} you will be {{ age + yearsToAdd }} years old.</p>
 	<p>Your primary weapon is {{ weapons.primary.name }} and it is used to {{ weapons.primary.use.toLowerCase() }}.</p>
 	<p v-if="weapons.secondary">Your secondary weapon is {{ weapons.secondary.name }} and it is used to {{ weapons.secondary.use.toLowerCase() }}.</p>
-	<hr />
+	<hr/>
 </template>

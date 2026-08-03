@@ -3,6 +3,7 @@
 	import { ref } from "vue";
 	import { emptyString } from "@/constants/common";
 	import Navbar from "@/components/Navbar.vue";
+	import VModelDemo from "@/components/VModelDemo.vue";
 	import DynamicDemo from "@/components/DynamicDemo.vue";
 	import SlotDemo from "@/components/SlotDemo.vue";
 	import EventDemo from "@/components/EventDemo.vue";
@@ -35,6 +36,7 @@
 </script>
 <template>
 	<Navbar/>
+	<VModelDemo v-model="demoProps"/>
 	<RegistrationDemo/>
 	<DynamicDemo/>
 	<SlotDemo>

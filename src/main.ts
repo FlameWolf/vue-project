@@ -7,5 +7,6 @@ import RegDemo from "@/components/RegDemo.vue";
 	const app = createApp(App);
 	app.use(router);
 	app.component("RegistrationDemo", RegDemo);
+	app.config.globalProperties.crypto = window.crypto;
 	app.mount("#app");
 })();
