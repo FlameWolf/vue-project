@@ -18,11 +18,11 @@
 <template>
 	<p>Hello, {{ model?.name ?? "Anonymous" }}</p>
 	<p>You are {{ model?.age ?? 0 }} years old.</p>
-	<hr />
+	<hr/>
 	<p v-if="modifiers.first">The "first" modifier is present</p>
 	<p v-if="modifiers.capitalise">The "capitalise" modifier is present</p>
 	<p v-if="modifiers.trim">The "trim" modifier is present</p>
-	<hr />
+	<hr/>
 	<button class="btn btn-primary" @click="updateModel(crypto.randomUUID(), Math.round(Math.random() * 100))">Update Model</button>
-	<hr />
+	<hr/>
 </template>

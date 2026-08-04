@@ -1,5 +1,9 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
+.d-contents {
+	display: contents;
+}
+
 .modal {
 	display: unset;
 }

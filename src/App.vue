@@ -3,6 +3,7 @@
 	import { ref } from "vue";
 	import { emptyString } from "@/constants/common";
 	import Navbar from "@/components/Navbar.vue";
+	import SlotDemo2 from "@/components/SlotDemo2.vue";
 	import FallThroughAttrsDemo from "@/components/FallThroughAttrsDemo.vue";
 	import VModelDemo from "@/components/VModelDemo.vue";
 	import DynamicDemo from "@/components/DynamicDemo.vue";
@@ -14,6 +15,7 @@
 	import WatchDemo from "@/components/WatchDemo.vue";
 	import FormDemo from "@/components/FormDemo.vue";
 	import ConfirmModal from "@/components/ConfirmModal.vue";
+	import Dropdown from "@/components/Dropdown.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -36,7 +38,29 @@
 	}
 </script>
 <template>
-	<Navbar/>
+	<Navbar class="mb-4"/>
+	<Dropdown>
+		<template #trigger-content>
+			<button class="btn btn-primary dropdown-toggle">Click to toggle</button>
+		</template>
+		<template #dropdown-content>
+			<div class="dropdown-menu show">
+				<div class="dropdown-item">First item</div>
+				<div class="dropdown-item">Second item</div>
+				<div class="dropdown-item">Third item</div>
+			</div>
+		</template>
+	</Dropdown>
+	<hr/>
+	<SlotDemo2>
+		<p>This content will go into the default slot because no slot name is specified.</p>
+		<template #secondary>
+			<p>Non-default content for the secondary alert.</p>
+		</template>
+		<template #success>
+			<p>Non-default content for the success alert.</p>
+		</template>
+	</SlotDemo2>
 	<FallThroughAttrsDemo class="btn-primary" name="target-button" type="button"/>
 	<VModelDemo v-model.first.capitalise="demoProps"/>
 	<RegistrationDemo/>
