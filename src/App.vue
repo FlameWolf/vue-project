@@ -17,6 +17,7 @@
 	import ConfirmModal from "@/components/ConfirmModal.vue";
 	import Dropdown from "@/components/Dropdown.vue";
 	import ProvideDemo from "@/components/ProvideDemo.vue";
+	import AsyncDemo from "@/components/AsyncDemo.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -40,6 +41,7 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<AsyncDemo/>
 	<ProvideDemo/>
 	<Dropdown>
 		<template #trigger-content>
