@@ -16,6 +16,7 @@
 	import FormDemo from "@/components/FormDemo.vue";
 	import ConfirmModal from "@/components/ConfirmModal.vue";
 	import Dropdown from "@/components/Dropdown.vue";
+	import ProvideDemo from "@/components/ProvideDemo.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -39,6 +40,7 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<ProvideDemo/>
 	<Dropdown>
 		<template #trigger-content>
 			<button class="btn btn-primary dropdown-toggle">Click to toggle</button>
