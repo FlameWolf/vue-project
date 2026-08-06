@@ -54,7 +54,7 @@
 						<a class="nav-link" role="button" @click="showConfirmModal">Show Modal</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a ref="nav-dropdown-trigger" class="nav-link dropdown-toggle" role="button" @click="toggleNavDropdown" :aria-expanded="showNavDropdown">Dropdown</a>
+						<a ref="nav-dropdown-trigger" class="nav-link dropdown-toggle" role="button" @click="toggleNavDropdown()" :aria-expanded="showNavDropdown">Dropdown</a>
 						<ul class="dropdown-menu" :class="{ show: showNavDropdown }">
 							<li><a class="dropdown-item" role="button">Action</a></li>
 							<li><a class="dropdown-item" role="button">Another action</a></li>
