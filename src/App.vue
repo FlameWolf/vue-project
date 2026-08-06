@@ -54,11 +54,15 @@
 	<hr/>
 	<SlotDemo2>
 		<p>This content will go into the default slot because no slot name is specified.</p>
-		<template #secondary>
+		<template #secondary="secondaryProps">
 			<p>Non-default content for the secondary alert.</p>
+			<p>Moniker: {{ secondaryProps.moniker }}</p>
+			<p>Age: {{ secondaryProps.age }}</p>
 		</template>
-		<template #success>
+		<template #success="successProps">
 			<p>Non-default content for the success alert.</p>
+			<p>Moniker: {{ successProps.moniker }}</p>
+			<p>Age: {{ successProps.age }}</p>
 		</template>
 	</SlotDemo2>
 	<FallThroughAttrsDemo class="btn-primary" name="target-button" type="button"/>
