@@ -1,0 +1,6 @@
+<template>
+	<div class="alert alert-danger" role="alert">
+		<h4 class="alert-heading">Error</h4>
+		<p>There was an error loading the component.</p>
+	</div>
+</template>
