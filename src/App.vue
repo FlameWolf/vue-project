@@ -64,6 +64,13 @@
 			<p>Moniker: {{ successProps.moniker }}</p>
 			<p>Age: {{ successProps.age }}</p>
 		</template>
+		<template #warning="warningProps">
+			<template v-if="warningProps.num % 2 === 0">
+				<p >This content is in a named slot inside a <code>v-for</code> loop.</p>
+				<p>Non-default content for the warning alert.</p>
+				<p>Num: {{ warningProps.num }}</p>
+			</template>
+		</template>
 	</SlotDemo2>
 	<FallThroughAttrsDemo class="btn-primary" name="target-button" type="button"/>
 	<VModelDemo v-model.first.capitalise="demoProps"/>

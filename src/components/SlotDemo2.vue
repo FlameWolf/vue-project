@@ -20,4 +20,9 @@ const slots = useSlots();
 	<hr/>
 	<p v-if="!slots.info">No content was provided from the owner component for the <code>info</code> slot.</p>
 	<hr/>
+	<template v-for="num in 10">
+		<div class="alert alert-warning" role="alert">
+			<slot name="warning" :num="num">{{ num }}: This is a warning alert.</slot>
+		</div>
+	</template>
 </template>
