@@ -18,6 +18,7 @@
 	import Dropdown from "@/components/Dropdown.vue";
 	import ProvideDemo from "@/components/ProvideDemo.vue";
 	import AsyncDemo from "@/components/AsyncDemo.vue";
+	import ComposableDemo from "@/components/ComposableDemo.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -41,6 +42,7 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<ComposableDemo/>
 	<AsyncDemo/>
 	<ProvideDemo/>
 	<Dropdown>
