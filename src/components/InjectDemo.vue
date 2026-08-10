@@ -17,5 +17,5 @@
 		<p>Count: {{ count }}</p>
 		<p>Time: {{ time }}</p>
 	</div>
-	<hr />
+	<hr/>
 </template>

@@ -23,14 +23,14 @@
 <template>
 	<div>
 		<h2>Composable Demo</h2>
-		<Spinner v-if="isLoading" />
+		<Spinner v-if="isLoading"/>
 		<div v-else-if="error">Error: {{ error.message }}</div>
 		<div v-else>
 			<h2>{{ data?.title }}</h2>
 			<p>{{ data?.body }}</p>
 		</div>
-		<hr />
+		<hr/>
 		<button class="btn btn-primary" @click="reFetch">Fetch Post 2</button>
 	</div>
-	<hr />
+	<hr/>
 </template>
