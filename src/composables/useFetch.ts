@@ -1,4 +1,4 @@
-import { ref, toRef, toValue, watch, watchEffect, type MaybeRefOrGetter } from "vue";
+import { ref, toRef, toValue, watch, type MaybeRefOrGetter } from "vue";
 
 export function useFetch(url: MaybeRefOrGetter<string>, init?: RequestInit) {
 	const data = ref<Record<keyof any, any> | null>(null);

@@ -43,6 +43,10 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<div>
+		<p>"Hello" in French is: {{ $translate("greetings.hello") }}</p>
+		<p>"Goodbye" in French is: {{ $translate("greetings.goodbye") }}</p>
+	</div>
 	<DirectiveDemo/>
 	<ComposableDemo/>
 	<AsyncDemo/>

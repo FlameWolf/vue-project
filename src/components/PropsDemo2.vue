@@ -23,7 +23,7 @@
 			required: true
 		},
 		weapons: {
-			default(props: Record<keyof any, unknown>) {
+			default(_props: Record<keyof any, unknown>) {
 				return {
 					primary: {
 						name: "Chakra",
