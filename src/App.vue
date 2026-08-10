@@ -1,6 +1,6 @@
 <script setup lang="ts">
 	import "@/styles.css";
-	import { ref } from "vue";
+	import { inject, ref } from "vue";
 	import { emptyString } from "@/constants/common";
 	import Navbar from "@/components/Navbar.vue";
 	import SlotDemo2 from "@/components/SlotDemo2.vue";
@@ -30,6 +30,7 @@
 		greeting: "здравей",
 		title: "Warrior"
 	});
+	const demoPlugin = inject("demoPlugin", []);
 
 	function onAgeIncrease(step: number) {
 		age.value += step;
@@ -43,6 +44,12 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<div>
+		<p>DemoPlugin options:</p>
+		<ul>
+			<li v-for="option in demoPlugin">{{ JSON.stringify(option) }}</li>
+		</ul>
+	</div>
 	<div>
 		<p>"Hello" in French is: {{ $translate("greetings.hello") }}</p>
 		<p>"Goodbye" in French is: {{ $translate("greetings.goodbye") }}</p>
