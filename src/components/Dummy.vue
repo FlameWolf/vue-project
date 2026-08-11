@@ -20,9 +20,11 @@
 </script>
 <template>
 	<h2>Reactive Array Behaviour Demo</h2>
-	<p>The value of<code>arrayRef</code> is: {{ arrayRef.join(separator) }}</p>
+	<p>The value of <code>arrayRef</code> is: {{ arrayRef.join(separator) }}</p>
 	<button class="btn btn-primary" @click="updateArray">Update</button>
 	<hr/>
-	<p ref="update" v-if="updated">Array updated at: {{ updated.toISOString() }}</p>
-	<hr/>
+	<template v-if="updated">
+		<p><code>arrayRef</code> updated at: {{ updated.toISOString() }}</p>
+		<hr/>
+	</template>
 </template>
