@@ -21,6 +21,7 @@
 	import ComposableDemo from "@/components/ComposableDemo.vue";
 	import DirectiveDemo from "@/components/DirectiveDemo.vue";
 	import TransitionDemo from "@/components/TransitionDemo.vue";
+	import Dummy from "@/components/Dummy.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -45,6 +46,7 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<Dummy/>
 	<TransitionDemo/>
 	<div>
 		<p>DemoPlugin options:</p>
