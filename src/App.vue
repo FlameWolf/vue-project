@@ -31,7 +31,7 @@
 		greeting: "здравей",
 		title: "Warrior"
 	});
-	const demoPlugin = inject("demoPlugin", []);
+	const demoPlugin = inject<Array<any>>("demoPlugin", []);
 
 	function onAgeIncrease(step: number) {
 		age.value += step;
@@ -87,7 +87,7 @@
 		</template>
 		<template #warning="warningProps">
 			<template v-if="warningProps.num % 2 === 0">
-				<p >This content is in a named slot inside a <code>v-for</code> loop.</p>
+				<p>This content is in a named slot inside a <code>v-for</code> loop.</p>
 				<p>Non-default content for the warning alert.</p>
 				<p>Num: {{ warningProps.num }}</p>
 			</template>
