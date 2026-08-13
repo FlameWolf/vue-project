@@ -2,6 +2,7 @@
 	import { ref } from "vue";
 
 	const show = ref(true);
+	const age = ref(1);
 </script>
 <template>
 	<button class="btn btn-primary" @click="show = !show">Toggle</button>
@@ -15,6 +16,22 @@
 		<span v-if="show" class="badge text-bg-info ms-2">Here is some bouncy text!</span>
 	</Transition>
 	<hr />
+	<div class="d-flex gap-4 align-items-center w-50 p-2 border rounded">
+		<div>Age:</div>
+		<Transition name="scroll" mode="out-in">
+			<div :key="age" class="fw-bold">{{ age }}</div>
+		</Transition>
+		<div class="input-group w-auto ms-auto">
+			<button class="btn btn-primary" @click="age++">+</button>
+			<button class="btn btn-primary" @click="age--">-</button>
+		</div>
+	</div>
+	<hr/>
+	<div class="d-flex gap-4 align-items-center w-50 p-2 border rounded">
+		<Transition name="bounce" mode="out-in">
+			<component :is="age % 2 === 0 ? `button` : `a`" class="btn btn-primary">{{ age }}</component>
+		</Transition>
+	</div>
 </template>
 <style>
 	/* Unnamed animation */
@@ -52,5 +69,18 @@
 		100% {
 			transform: scale(1);
 		}
+	}
+	/* Scroll animation */
+	.scroll-enter-active,
+	.scroll-leave-active {
+		transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	}
+	.scroll-enter-from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	.scroll-leave-to {
+		transform: translateY(100%);
+		opacity: 0;
 	}
 </style>
