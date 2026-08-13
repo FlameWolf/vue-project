@@ -22,6 +22,7 @@
 	import DirectiveDemo from "@/components/DirectiveDemo.vue";
 	import TransitionDemo from "@/components/TransitionDemo.vue";
 	import Dummy from "@/components/Dummy.vue";
+	import TransitionGroupDemo from "@/components/TransitionGroupDemo.vue";
 
 	const age = ref(25);
 	const ageChangeMessage = ref(emptyString);
@@ -46,6 +47,7 @@
 </script>
 <template>
 	<Navbar class="mb-4"/>
+	<TransitionGroupDemo/>
 	<Dummy/>
 	<TransitionDemo/>
 	<div>
