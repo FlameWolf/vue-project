@@ -35,6 +35,7 @@
 		title: "Warrior"
 	});
 	const demoPlugin = inject<Array<any>>("demoPlugin", []);
+	const buildNumber = __BUILD_NUMBER__;
 
 	function onAgeIncrease(step: number) {
 		age.value += step;
@@ -125,5 +126,8 @@
 	<RefDemo/>
 	<WatchDemo/>
 	<FormDemo/>
+	<div class="d-flex">
+		<div>Build: {{ buildNumber }}</div>
+	</div>
 	<ConfirmModal/>
 </template>
